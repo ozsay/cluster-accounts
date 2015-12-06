@@ -1,4 +1,4 @@
-# cluster-auth
-A solution for authentication in meteorhacks:cluster
+# cluster-accounts
+A solution for accounts/authentication in meteorhacks:cluster
 
 WIP
