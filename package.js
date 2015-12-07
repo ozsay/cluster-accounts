@@ -9,7 +9,7 @@ Package.describe({
 Package.onUse(function (api) {
     api.versionsFrom('METEOR@0.9.2');
 
-    api.use('meteorhacks:cluster', ['server', 'client']);
+    api.use('meteorhacks:cluster@1.6.9', ['server', 'client']);
 
     api.imply('meteorhacks:cluster');
 
