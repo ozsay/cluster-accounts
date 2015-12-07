@@ -1,5 +1,5 @@
 Package.describe({
-    name: "ozsay:cluster-accounts",
+    name: "cluster-accounts",
     summary: "A solution for accounts/authentication in meteorhacks:cluster",
     version: "0.1.0",
     git: "https://github.com/ozsay/cluster-accounts.git",
@@ -13,11 +13,15 @@ Package.onUse(function (api) {
 
     api.imply('meteorhacks:cluster');
 
-    api.use('insecure', ['server', 'client'], {weak: true});
+    api.use('accounts-base', 'client');
 
     api.addFiles([
         'lib/server/accountsCommon.js',
         'lib/server/accountsConsumer.js',
         'lib/server/accountsProvider.js'
     ], ['server']);
+
+    api.addFiles([
+        'lib/client/accountsClient.js'
+    ], ['client']);
 });
