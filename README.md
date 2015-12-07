@@ -47,3 +47,7 @@ example:
 ```
 
 And finally start the consumer: `Cluster.startConsumer()`.
+
+## How it works
+
+![Drawing](http://i67.tinypic.com/bfp5wp.jpg)
