@@ -51,3 +51,10 @@ And finally start the consumer: `Cluster.startConsumer()`.
 ## How it works
 
 ![Drawing](http://i67.tinypic.com/bfp5wp.jpg)
+
+- When you start the provider it will create a collection in the server of the logged in users.
+- When you start a consumer it will subscribe to the logged in users collection that exists in the provider.
+- When a client performs a login to the web service, `cluster-account` automatically will perform a login to each of the
+ connected cluster nodes.
+
+ > In order for this to work, we needed to publish the login tokens of a user to the client.
