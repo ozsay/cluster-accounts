@@ -25,7 +25,7 @@ You can define it via environment variable: `export CLUSTER_ACCOUNTS_SECRET=this
 or programmatically `Cluster.setAccountsSecret('this_is_a_secret')`.
 
 > It is very important that you don't expose this string to your users, because we use this string to authenticate a
-node in the cluster when we subscribe to the logged in users collection.
+node in the cluster when we subscribe a consumer to the logged in users collection.
 
 Then start the provider with `Cluster.startProvider()`.
 
@@ -46,4 +46,4 @@ example:
 	Cluster.setAccountsConnection(connection);
 ```
 
-And finnaly start the consumer: `Cluster.startConsumer()`.
+And finally start the consumer: `Cluster.startConsumer()`.
