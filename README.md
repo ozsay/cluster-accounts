@@ -1,7 +1,7 @@
 # cluster-accounts
 A solution for accounts/authentication in meteorhacks:cluster
 
-WIP
+WIP - Not yet published
 
 ## Getting Started
 
