@@ -1,8 +1,6 @@
 # cluster-accounts
 A solution for accounts/authentication in meteorhacks:cluster
 
-WIP - Not yet published
-
 ## Getting Started
 
 `meteor add ozsay:cluster-accounts`
