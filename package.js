@@ -25,3 +25,10 @@ Package.onUse(function (api) {
         'lib/client/accountsClient.js'
     ], ['client']);
 });
+
+Package.onTest(function (api) {
+    api.use(['ozsay:cluster-accounts', 'velocity:html-reporter', 'sanjo:jasmine@0.20.3', 'ddp', 'accounts-base'], ['client', 'server']);
+    api.addFiles('test/server/provider-tests.js', ['server']);
+
+    api.addFiles('test/client/tests.js', ['client']);
+});
