@@ -15,11 +15,6 @@ After you setup the cluster in your projects you need to define the meteor app t
 (could be the `web` service or a dedicated service). From now on we will refer to that app as the **provider** since it
 provides the logged in users collection. All the other apps in your cluster that depend on `cluster-accounts` are the **consumers**.
 
-### Common server-side
-
-By default, the packages writes logs to the console.
-You can override this behavior by setting a different logger via `Cluster.setAccountLogger`.
-
 ### Setup a provider
 
 First, you need to define a string that will be a secret.
@@ -50,6 +45,23 @@ example:
 ```
 
 And finally start the consumer: `Cluster.startConsumer()`.
+
+### Logging
+
+By default, the packages writes logs to the console.
+You can override this behavior by setting a different logger via `Cluster.setAccountLogger`.
+
+The package write logs about the following events:
+
+**Provider:**
+1. When the provider has been successfully created (info).
+2. When a user has been logged in (debug).
+3. When a user has been logged out (debug).
+
+**Consumer:**
+1. When the consumer has been successfully created (info).
+2. When a user has been logged in (debug).
+3. When a user has been logged out (debug).
 
 ## How it works
 
