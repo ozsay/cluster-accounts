@@ -1,5 +1,5 @@
 # cluster-accounts
-A solution for accounts/authentication in meteorhacks:cluster
+This package adds support for accounts/authentication in meteorhacks:cluster
 
 ## Getting Started
 
@@ -27,8 +27,6 @@ node in the cluster when we subscribe a consumer to the logged in users collecti
 
 Then start the provider with `Cluster.startProvider()`.
 
-> `cluster-accounts` adds the `services` object to the default user subscription.
-
 ### Setup a consumer
 
 First, define the secret as you did with the provider.
@@ -51,7 +49,7 @@ And finally start the consumer: `Cluster.startConsumer()`.
 By default, the packages writes logs to the console.
 You can override this behavior by setting a different logger via `Cluster.setAccountLogger`.
 
-The package write logs about the following events:
+The package writes logs about the following events:
 
 **Provider:**
 1. When the provider has been successfully created (info).
@@ -65,7 +63,7 @@ The package write logs about the following events:
 
 ## How it works
 
-![Drawing](http://i67.tinypic.com/bfp5wp.jpg)
+![Drawing](http://i66.tinypic.com/i5w5ld.jpg)
 
 - When you start the provider it will create a collection in the server of the logged in users.
 - When you start a consumer it will subscribe to the logged in users collection that exists in the provider.
