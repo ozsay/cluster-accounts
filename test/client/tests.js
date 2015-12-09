@@ -16,18 +16,9 @@ describe('Logged in client tests', function () {
         };
 
         var user = {
-            _id: 'userId',
-            services: {
-                resume: {
-                    loginTokens: [
-                        {
-                            when: new Date(),
-                            hashedToken: 'token'
-                        }
-                    ]
-                }
-            }
+            _id: 'userId'
         };
+        Accounts._lastLoginTokenWhenPolled = 'token';
 
         spyOn(DDP, "connect").and.returnValue(connection);
 
@@ -40,7 +31,7 @@ describe('Logged in client tests', function () {
         connection.onReconnect();
 
         expect(connection.call).toHaveBeenCalled();
-        expect(connection.call).toHaveBeenCalledWith('cluster-accounts-login', user._id, user.services.resume.loginTokens);
+        expect(connection.call).toHaveBeenCalledWith('cluster-accounts-login', user._id, Accounts._lastLoginTokenWhenPolled);
     });
 
     it('Login after connection is established', function() {
@@ -49,6 +40,7 @@ describe('Logged in client tests', function () {
         };
 
         var user = null;
+        Accounts._lastLoginTokenWhenPolled = 'token';
 
         var loginCb = null;
 
@@ -57,6 +49,7 @@ describe('Logged in client tests', function () {
         spyOn(Meteor, 'user').and.callFake(function() {
             return user;
         });
+
 
         spyOn(Accounts, "onLogin").and.callFake(function(cb) {
             loginCb = cb;
@@ -71,23 +64,13 @@ describe('Logged in client tests', function () {
         expect(connection.call).not.toHaveBeenCalled();
 
         user = {
-            _id: 'userId',
-            services: {
-                resume: {
-                    loginTokens: [
-                        {
-                            when: new Date(),
-                            hashedToken: 'token'
-                        }
-                    ]
-                }
-            }
+            _id: 'userId'
         };
 
         loginCb();
 
         expect(connection.call).toHaveBeenCalled();
-        expect(connection.call).toHaveBeenCalledWith('cluster-accounts-login', user._id, user.services.resume.loginTokens);
+        expect(connection.call).toHaveBeenCalledWith('cluster-accounts-login', user._id, Accounts._lastLoginTokenWhenPolled);
     });
 });
 

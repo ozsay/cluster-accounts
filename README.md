@@ -71,5 +71,3 @@ The package write logs about the following events:
 - When you start a consumer it will subscribe to the logged in users collection that exists in the provider.
 - When a client performs a login to the web service, `cluster-account` automatically will perform a login to each of the
  connected cluster nodes.
-
- > In order for this to work, we needed to publish the login tokens of a user to the client.
