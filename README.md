@@ -52,11 +52,13 @@ You can override this behavior by setting a different logger via `Cluster.setAcc
 The package writes logs about the following events:
 
 **Provider:**
+
 1. When the provider has been successfully created (info).
 2. When a user has been logged in (debug).
 3. When a user has been logged out (debug).
 
 **Consumer:**
+
 1. When the consumer has been successfully created (info).
 2. When a user has been logged in (debug).
 3. When a user has been logged out (debug).
