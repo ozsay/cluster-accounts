@@ -9,11 +9,11 @@ Package.describe({
 Package.onUse(function (api) {
     api.versionsFrom('METEOR@0.9.2');
 
-    api.use(['meteorhacks:cluster@1.6.9', 'check'], ['server', 'client']);
+    api.use(['meteorhacks:cluster@1.6.9'], ['server', 'client']);
 
     api.imply('meteorhacks:cluster');
 
-    api.use('accounts-base', 'client');
+    api.use(['accounts-base', 'check'], 'client');
 
     api.addFiles([
         'lib/server/accountsCommon.js',
