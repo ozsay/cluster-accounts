@@ -1,7 +1,7 @@
 Package.describe({
     name: "ozsay:cluster-accounts",
     summary: "A solution for accounts/authentication in meteorhacks:cluster",
-    version: "0.1.0",
+    version: "0.2.0",
     git: "https://github.com/ozsay/cluster-accounts.git",
     documentation: "README.md"
 });
