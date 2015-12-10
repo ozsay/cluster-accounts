@@ -54,8 +54,6 @@ The package writes logs about the following events:
 **Provider:**
 
 1. When the provider has been successfully created (info).
-2. When a user has been logged in (debug).
-3. When a user has been logged out (debug).
 
 **Consumer:**
 
